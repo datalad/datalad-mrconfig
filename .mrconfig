@@ -1,0 +1,39 @@
+[DEFAULT]
+lib = export GIT_DLGITHUB_URL=git://github.com/datalad \
+             GIT_NDGITHUB_URL=git://github.com/neurodebian
+git_push = git push
+git_update = git fetch -a && git pull --ff-only
+
+[datalad]
+checkout = git clone "${GIT_DLGITHUB_URL}/datalad" "datalad"
+
+[datalad.org]
+checkout = git clone "${GIT_DLGITHUB_URL}/datalad.org" "datalad.org" && \
+           cd datalad.org && git submodule init && git submodule update
+
+#[docs]
+#checkout = echo "todo"
+
+[artwork]
+checkout = git clone "${GIT_DLGITHUB_URL}/artwork" artwork
+
+#[finances]
+#checkout = echo "todo: private"
+
+[3rd/custom-remotes/googledriveannex]
+checkout = git clone 'git://github.com/TobiasTheViking/googledriveannex.git' '3rd/custom-remotes/googledriveannex'
+
+[3rd/custom-remotes/flickrannex]
+checkout = git clone 'git://github.com/TobiasTheViking/flickrannex' '3rd/custom-remotes/flickrannex'
+
+[3rd/custom-remotes/owncloudannex]
+checkout = git clone 'git://github.com/TobiasTheViking/owncloudannex' '3rd/custom-remotes/owncloudannex'
+
+[3rd/custom-remotes/dropboxannex]
+checkout = git clone 'git://github.com/TobiasTheViking/dropboxannex' '3rd/custom-remotes/dropboxannex'
+
+[3rd/custom-remotes/skydriveannex]
+checkout = git clone 'git://github.com/TobiasTheViking/skydriveannex' '3rd/custom-remotes/skydriveannex'
+
+[3rd/custom-remotes/git-annex-remote-hubic]
+checkout = git clone 'git://github.com/Schnouki/git-annex-remote-hubic' '3rd/custom-remotes/git-annex-remote-hubic'
