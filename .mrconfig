@@ -1,6 +1,7 @@
 [DEFAULT]
 lib = export GIT_DLGITHUB_URL=git://github.com/datalad \
-             GIT_NDGITHUB_URL=git://github.com/neurodebian
+             GIT_NDGITHUB_URL=git://github.com/neurodebian \
+             GIT_SMAUG_URL=ssh://smaug.datalad.org:/srv/git/datalad
 git_push = git push
 git_update = git fetch -a && git pull --ff-only
 
@@ -10,6 +11,9 @@ checkout = git clone "${GIT_DLGITHUB_URL}/datalad" "datalad"
 [datalad.org]
 checkout = git clone "${GIT_DLGITHUB_URL}/datalad.org" "datalad.org" && \
            cd datalad.org && git submodule init && git submodule update
+
+[ansi]
+checkout = git clone "${GIT_SMAUG_URL}/ansi.git" "ansi"
 
 #[docs]
 #checkout = echo "todo"
