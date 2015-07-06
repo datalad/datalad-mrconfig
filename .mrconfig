@@ -15,6 +15,9 @@ checkout = git clone "${GIT_DLGITHUB_URL}/datalad.org" "datalad.org" && \
 [ansi]
 checkout = git clone "${GIT_SMAUG_URL}/ansi.git" "ansi"
 
+[benchmarking]
+checkout = git clone "${GIT_DLGITHUB_URL}/benchmarking" "benchmarking"
+
 #[docs]
 #checkout = echo "todo"
 
